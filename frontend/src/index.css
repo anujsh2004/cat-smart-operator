@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* Design tokens (docs/TRACK_B.md "UI design direction"): dark cab-tablet theme, industrial yellow accent */
+@theme {
+  --color-bg: #0b0d10;
+  --color-card: #15191f;
+  --color-raised: #1d232b;
+  --color-line: #2a313b;
+  --color-ink: #eceef1;
+  --color-muted: #9aa4b1;
+  --color-accent: #f5b800;
+  --color-accent-ink: #0b0d10;
+  --color-good: #22c55e;
+  --color-warn: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #60a5fa;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Slow, low-amplitude pulse for the safety banner: noticeable, never strobing (< 1 Hz). */
+@keyframes alert-pulse {
+  0%,
+  100% {
+    background-color: rgb(239 68 68 / 0.95);
+  }
+  50% {
+    background-color: rgb(185 28 28 / 0.95);
+  }
+}
+
+.alert-pulse {
+  animation: alert-pulse 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alert-pulse {
+    animation: none;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
