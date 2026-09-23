@@ -84,7 +84,7 @@ export function DayBarChart({
 export function IdleVsFleetChart({ data, fleetAvg, height = 200 }: { data: Row[]; fleetAvg: number; height?: number }) {
   return (
     <ResponsiveContainer width="100%" height={height}>
-      <LineChart data={data} margin={{ top: 16, right: 12, bottom: 0, left: -8 }}>
+      <LineChart data={data} margin={{ top: 16, right: 76, bottom: 0, left: -8 }}>
         <CartesianGrid vertical={false} stroke={CHART.grid} />
         <XAxis dataKey="day" {...axisProps} />
         <YAxis {...axisProps} width={48} domain={[0, (max: number) => Math.max(50, Math.ceil(max / 10) * 10)]} unit="%" />
@@ -92,7 +92,7 @@ export function IdleVsFleetChart({ data, fleetAvg, height = 200 }: { data: Row[]
         <ReferenceLine
           y={fleetAvg}
           stroke={CHART.reference}
-          label={{ value: `Fleet avg ${fleetAvg}%`, position: "insideTopRight", fill: CHART.axis, fontSize: 12 }}
+          label={{ value: `Fleet ${fleetAvg}%`, position: "right", fill: CHART.axis, fontSize: 12 }}
         />
         <Line
           type="monotone"
