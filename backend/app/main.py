@@ -3,11 +3,20 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy import text
 
 from app.config import settings
-from app.db.session import engine
-from app.schemas import HealthResponse
+from app.routers import (
+    analytics,
+    anomalies,
+    incidents,
+    machines,
+    predict,
+    safety,
+    sim,
+    system,
+    tasks,
+    training,
+)
 from app.services.ml import interface as ml
 
 logging.basicConfig(level=logging.INFO)
@@ -31,18 +40,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-def _db_ok() -> bool:
-    try:
-        with engine.connect() as conn:
-            conn.execute(text("SELECT 1"))
-        return True
-    except Exception as exc:  # health must report, not crash
-        logger.warning("DB health check failed: %s", exc)
-        return False
-
-
-@app.get("/api/health", response_model=HealthResponse, tags=["system"])
-def health() -> HealthResponse:
-    db = _db_ok()
-    return HealthResponse(status="ok" if db else "degraded", db=db, ml_mode=ml.ml_mode())
+for module in (system, tasks, machines, safety, incidents, predict, anomalies, analytics, training, sim):
+    app.include_router(module.router, prefix="/api")
