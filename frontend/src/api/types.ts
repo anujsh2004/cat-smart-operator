@@ -303,3 +303,15 @@ export interface ScenarioRequest {
 export interface ResetRequest {
   machine_id: string;
 }
+
+// Enum value lists for form controls (same strings as the types above)
+export const TASK_TYPES: readonly TaskType[] = ["Earth Excavation", "Trenching", "Material Loading", "Grading", "Demolition"];
+export const WEATHERS: readonly Weather[] = ["Sunny", "Cloudy", "Windy", "Rainy", "Foggy"];
+export const GROUND_CONDITIONS: readonly GroundCondition[] = ["Firm", "Loose", "Wet", "Rocky"];
+export const SKILL_LEVELS: readonly SkillLevel[] = ["Beginner", "Intermediate", "Expert"];
+export const SEVERITIES: readonly Severity[] = ["low", "medium", "high"];
+export const EVENT_TYPES: readonly EventType[] = [
+  "proximity_hazard", "seatbelt_unfastened", "excessive_idling", "fuel_spike",
+  "abnormal_cycle_time", "unsafe_operation", "manual_report",
+];
+export const SCENARIOS: readonly Scenario[] = ["normal", "seatbelt_off", "proximity_hazard", "excessive_idle", "fuel_spike", "rain"];

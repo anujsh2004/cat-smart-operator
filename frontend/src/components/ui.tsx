@@ -278,3 +278,39 @@ export function ProgressBar({ value, tone = "accent", label }: { value: number; 
     </div>
   );
 }
+
+// --- Form fields ---
+
+export function Field({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <label className="flex flex-col gap-1.5 text-sm text-muted">
+      {label}
+      {children}
+    </label>
+  );
+}
+
+export const inputClass =
+  "min-h-12 rounded-xl border border-line bg-raised px-3 text-base text-ink focus:border-accent focus:outline-none";
+
+export function Select<T extends string>({
+  value,
+  options,
+  onChange,
+  labels,
+}: {
+  value: T;
+  options: readonly T[];
+  onChange: (v: T) => void;
+  labels?: Partial<Record<T, string>>;
+}) {
+  return (
+    <select className={inputClass} value={value} onChange={(e) => onChange(e.target.value as T)}>
+      {options.map((o) => (
+        <option key={o} value={o}>
+          {labels?.[o] ?? o}
+        </option>
+      ))}
+    </select>
+  );
+}
