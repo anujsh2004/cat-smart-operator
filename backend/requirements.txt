@@ -4,8 +4,12 @@ pydantic>=2
 pydantic-settings
 sqlalchemy>=2
 psycopg[binary]
-pandas
-numpy
+pandas==3.0.6
+numpy==2.4.6
 python-dotenv
 pytest
 httpx
+# ML (Track A): pinned identical to ml/requirements.txt so saved models load
+scikit-learn==1.9.1
+xgboost==3.2.0
+joblib==1.6.0
