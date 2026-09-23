@@ -1,0 +1,1902 @@
+{
+  "model": "iforest_anomaly_v1",
+  "feature_columns": [
+    "idle_pct",
+    "fuel_rate_lph",
+    "cycle_time_s",
+    "fuel_per_cycle_l",
+    "task_type=Earth Excavation",
+    "task_type=Trenching",
+    "task_type=Material Loading",
+    "task_type=Grading",
+    "task_type=Demolition"
+  ],
+  "contamination": 0.0386,
+  "score_scaling": {
+    "lo": 0.45746,
+    "hi": 0.66292,
+    "threshold": 0.49762
+  },
+  "thresholds": {
+    "idle_pct_ratio": 1.8,
+    "idle_time_ratio": 2.0,
+    "fuel_rate_ratio": 1.6,
+    "cycle_time_ratio": 2.0,
+    "elevated_ratio": 1.3,
+    "unsafe_proximity_m": 3.0,
+    "min_engine_on_min": 5.0
+  },
+  "baselines": {
+    "operator": {
+      "OP1001": {
+        "idle_time_min": 34.655,
+        "idle_pct": 37.564,
+        "fuel_rate_lph": 11.199,
+        "cycle_time_s": 26.35
+      },
+      "OP1002": {
+        "idle_time_min": 33.0,
+        "idle_pct": 33.02,
+        "fuel_rate_lph": 11.862,
+        "cycle_time_s": 28.056
+      },
+      "OP1003": {
+        "idle_time_min": 23.71,
+        "idle_pct": 28.859,
+        "fuel_rate_lph": 12.495,
+        "cycle_time_s": 25.157
+      },
+      "OP1004": {
+        "idle_time_min": 21.35,
+        "idle_pct": 30.029,
+        "fuel_rate_lph": 12.453,
+        "cycle_time_s": 25.899
+      },
+      "OP1005": {
+        "idle_time_min": 21.35,
+        "idle_pct": 30.273,
+        "fuel_rate_lph": 12.179,
+        "cycle_time_s": 26.256
+      },
+      "OP1006": {
+        "idle_time_min": 34.92,
+        "idle_pct": 37.054,
+        "fuel_rate_lph": 11.345,
+        "cycle_time_s": 27.055
+      },
+      "OP1007": {
+        "idle_time_min": 19.93,
+        "idle_pct": 29.358,
+        "fuel_rate_lph": 12.428,
+        "cycle_time_s": 28.383
+      },
+      "OP1008": {
+        "idle_time_min": 21.16,
+        "idle_pct": 31.068,
+        "fuel_rate_lph": 11.975,
+        "cycle_time_s": 27.373
+      },
+      "OP1009": {
+        "idle_time_min": 19.73,
+        "idle_pct": 27.055,
+        "fuel_rate_lph": 12.908,
+        "cycle_time_s": 24.987
+      },
+      "OP1010": {
+        "idle_time_min": 35.915,
+        "idle_pct": 37.472,
+        "fuel_rate_lph": 11.485,
+        "cycle_time_s": 27.853
+      },
+      "OP1011": {
+        "idle_time_min": 19.39,
+        "idle_pct": 27.838,
+        "fuel_rate_lph": 12.695,
+        "cycle_time_s": 25.195
+      },
+      "OP1012": {
+        "idle_time_min": 32.4,
+        "idle_pct": 35.105,
+        "fuel_rate_lph": 11.549,
+        "cycle_time_s": 25.398
+      },
+      "OP1013": {
+        "idle_time_min": 19.33,
+        "idle_pct": 28.515,
+        "fuel_rate_lph": 12.161,
+        "cycle_time_s": 29.42
+      },
+      "OP1014": {
+        "idle_time_min": 31.15,
+        "idle_pct": 34.584,
+        "fuel_rate_lph": 11.73,
+        "cycle_time_s": 27.453
+      },
+      "OP1015": {
+        "idle_time_min": 32.205,
+        "idle_pct": 35.584,
+        "fuel_rate_lph": 11.575,
+        "cycle_time_s": 25.991
+      },
+      "OP1016": {
+        "idle_time_min": 38.39,
+        "idle_pct": 36.033,
+        "fuel_rate_lph": 11.656,
+        "cycle_time_s": 27.569
+      },
+      "OP1017": {
+        "idle_time_min": 39.04,
+        "idle_pct": 35.005,
+        "fuel_rate_lph": 11.667,
+        "cycle_time_s": 25.747
+      },
+      "OP1018": {
+        "idle_time_min": 24.32,
+        "idle_pct": 31.165,
+        "fuel_rate_lph": 12.119,
+        "cycle_time_s": 25.836
+      },
+      "OP1019": {
+        "idle_time_min": 29.67,
+        "idle_pct": 35.396,
+        "fuel_rate_lph": 11.604,
+        "cycle_time_s": 27.384
+      },
+      "OP1020": {
+        "idle_time_min": 22.6,
+        "idle_pct": 28.396,
+        "fuel_rate_lph": 12.426,
+        "cycle_time_s": 27.563
+      },
+      "OP1021": {
+        "idle_time_min": 24.405,
+        "idle_pct": 28.356,
+        "fuel_rate_lph": 12.278,
+        "cycle_time_s": 26.488
+      },
+      "OP1022": {
+        "idle_time_min": 40.595,
+        "idle_pct": 39.275,
+        "fuel_rate_lph": 11.018,
+        "cycle_time_s": 27.198
+      },
+      "OP1023": {
+        "idle_time_min": 23.62,
+        "idle_pct": 29.318,
+        "fuel_rate_lph": 12.261,
+        "cycle_time_s": 26.09
+      },
+      "OP1024": {
+        "idle_time_min": 34.725,
+        "idle_pct": 35.523,
+        "fuel_rate_lph": 11.637,
+        "cycle_time_s": 26.105
+      },
+      "OP1025": {
+        "idle_time_min": 24.84,
+        "idle_pct": 30.45,
+        "fuel_rate_lph": 12.256,
+        "cycle_time_s": 25.824
+      },
+      "OP1026": {
+        "idle_time_min": 24.785,
+        "idle_pct": 32.153,
+        "fuel_rate_lph": 12.171,
+        "cycle_time_s": 27.208
+      },
+      "OP1027": {
+        "idle_time_min": 20.48,
+        "idle_pct": 27.222,
+        "fuel_rate_lph": 12.493,
+        "cycle_time_s": 28.045
+      },
+      "OP1028": {
+        "idle_time_min": 18.43,
+        "idle_pct": 25.521,
+        "fuel_rate_lph": 12.996,
+        "cycle_time_s": 25.702
+      },
+      "OP1029": {
+        "idle_time_min": 34.62,
+        "idle_pct": 37.203,
+        "fuel_rate_lph": 11.531,
+        "cycle_time_s": 25.485
+      },
+      "OP1030": {
+        "idle_time_min": 32.82,
+        "idle_pct": 35.942,
+        "fuel_rate_lph": 11.55,
+        "cycle_time_s": 26.863
+      },
+      "OP1031": {
+        "idle_time_min": 32.285,
+        "idle_pct": 32.87,
+        "fuel_rate_lph": 11.836,
+        "cycle_time_s": 27.307
+      },
+      "OP1032": {
+        "idle_time_min": 21.42,
+        "idle_pct": 30.088,
+        "fuel_rate_lph": 12.152,
+        "cycle_time_s": 26.12
+      },
+      "OP1033": {
+        "idle_time_min": 29.215,
+        "idle_pct": 33.808,
+        "fuel_rate_lph": 11.762,
+        "cycle_time_s": 26.667
+      },
+      "OP1034": {
+        "idle_time_min": 46.78,
+        "idle_pct": 38.651,
+        "fuel_rate_lph": 11.21,
+        "cycle_time_s": 26.337
+      },
+      "OP1035": {
+        "idle_time_min": 23.29,
+        "idle_pct": 30.076,
+        "fuel_rate_lph": 12.186,
+        "cycle_time_s": 27.68
+      },
+      "OP1036": {
+        "idle_time_min": 37.56,
+        "idle_pct": 36.175,
+        "fuel_rate_lph": 11.585,
+        "cycle_time_s": 26.811
+      },
+      "OP1037": {
+        "idle_time_min": 54.47,
+        "idle_pct": 43.51,
+        "fuel_rate_lph": 10.465,
+        "cycle_time_s": 26.296
+      },
+      "OP1038": {
+        "idle_time_min": 29.07,
+        "idle_pct": 32.929,
+        "fuel_rate_lph": 11.799,
+        "cycle_time_s": 26.289
+      },
+      "OP1039": {
+        "idle_time_min": 26.73,
+        "idle_pct": 30.461,
+        "fuel_rate_lph": 12.06,
+        "cycle_time_s": 27.999
+      },
+      "OP1040": {
+        "idle_time_min": 24.82,
+        "idle_pct": 28.535,
+        "fuel_rate_lph": 12.348,
+        "cycle_time_s": 25.466
+      },
+      "OP1041": {
+        "idle_time_min": 36.49,
+        "idle_pct": 34.712,
+        "fuel_rate_lph": 11.624,
+        "cycle_time_s": 27.471
+      },
+      "OP1042": {
+        "idle_time_min": 36.125,
+        "idle_pct": 35.261,
+        "fuel_rate_lph": 11.431,
+        "cycle_time_s": 27.066
+      },
+      "OP1043": {
+        "idle_time_min": 53.15,
+        "idle_pct": 41.659,
+        "fuel_rate_lph": 10.985,
+        "cycle_time_s": 26.935
+      },
+      "OP1044": {
+        "idle_time_min": 22.19,
+        "idle_pct": 29.086,
+        "fuel_rate_lph": 12.364,
+        "cycle_time_s": 26.063
+      },
+      "OP1045": {
+        "idle_time_min": 34.09,
+        "idle_pct": 33.247,
+        "fuel_rate_lph": 11.831,
+        "cycle_time_s": 26.957
+      },
+      "OP1046": {
+        "idle_time_min": 27.61,
+        "idle_pct": 29.76,
+        "fuel_rate_lph": 12.196,
+        "cycle_time_s": 27.512
+      },
+      "OP1047": {
+        "idle_time_min": 22.9,
+        "idle_pct": 27.352,
+        "fuel_rate_lph": 12.481,
+        "cycle_time_s": 28.251
+      },
+      "OP1048": {
+        "idle_time_min": 39.61,
+        "idle_pct": 33.978,
+        "fuel_rate_lph": 11.896,
+        "cycle_time_s": 25.96
+      },
+      "OP1049": {
+        "idle_time_min": 56.39,
+        "idle_pct": 44.063,
+        "fuel_rate_lph": 10.193,
+        "cycle_time_s": 27.986
+      },
+      "OP1050": {
+        "idle_time_min": 57.03,
+        "idle_pct": 43.764,
+        "fuel_rate_lph": 10.572,
+        "cycle_time_s": 26.592
+      }
+    },
+    "operator_task": {
+      "OP1001|Demolition": {
+        "idle_time_min": 64.265,
+        "idle_pct": 38.461,
+        "fuel_rate_lph": 13.945,
+        "cycle_time_s": 30.24
+      },
+      "OP1001|Earth Excavation": {
+        "idle_time_min": 43.53,
+        "idle_pct": 38.013,
+        "fuel_rate_lph": 11.934,
+        "cycle_time_s": 20.464
+      },
+      "OP1001|Grading": {
+        "idle_time_min": 28.15,
+        "idle_pct": 37.53,
+        "fuel_rate_lph": 9.319,
+        "cycle_time_s": 94.525
+      },
+      "OP1001|Material Loading": {
+        "idle_time_min": 21.89,
+        "idle_pct": 37.857,
+        "fuel_rate_lph": 10.425,
+        "cycle_time_s": 35.586
+      },
+      "OP1001|Trenching": {
+        "idle_time_min": 31.01,
+        "idle_pct": 36.172,
+        "fuel_rate_lph": 11.206,
+        "cycle_time_s": 24.425
+      },
+      "OP1002|Demolition": {
+        "idle_time_min": 69.94,
+        "idle_pct": 33.257,
+        "fuel_rate_lph": 15.364,
+        "cycle_time_s": 29.62
+      },
+      "OP1002|Earth Excavation": {
+        "idle_time_min": 44.02,
+        "idle_pct": 32.637,
+        "fuel_rate_lph": 12.839,
+        "cycle_time_s": 20.299
+      },
+      "OP1002|Grading": {
+        "idle_time_min": 26.715,
+        "idle_pct": 33.16,
+        "fuel_rate_lph": 10.129,
+        "cycle_time_s": 91.412
+      },
+      "OP1002|Material Loading": {
+        "idle_time_min": 21.8,
+        "idle_pct": 32.95,
+        "fuel_rate_lph": 11.043,
+        "cycle_time_s": 35.776
+      },
+      "OP1002|Trenching": {
+        "idle_time_min": 33.355,
+        "idle_pct": 33.403,
+        "fuel_rate_lph": 12.05,
+        "cycle_time_s": 24.322
+      },
+      "OP1003|Demolition": {
+        "idle_time_min": 44.97,
+        "idle_pct": 27.486,
+        "fuel_rate_lph": 15.794,
+        "cycle_time_s": 29.892
+      },
+      "OP1003|Earth Excavation": {
+        "idle_time_min": 32.18,
+        "idle_pct": 29.657,
+        "fuel_rate_lph": 13.352,
+        "cycle_time_s": 20.224
+      },
+      "OP1003|Grading": {
+        "idle_time_min": 19.13,
+        "idle_pct": 30.587,
+        "fuel_rate_lph": 10.19,
+        "cycle_time_s": 92.709
+      },
+      "OP1003|Material Loading": {
+        "idle_time_min": 16.5,
+        "idle_pct": 28.053,
+        "fuel_rate_lph": 11.519,
+        "cycle_time_s": 34.535
+      },
+      "OP1003|Trenching": {
+        "idle_time_min": 22.22,
+        "idle_pct": 27.424,
+        "fuel_rate_lph": 12.197,
+        "cycle_time_s": 23.802
+      },
+      "OP1004|Demolition": {
+        "idle_time_min": 37.93,
+        "idle_pct": 29.222,
+        "fuel_rate_lph": 15.465,
+        "cycle_time_s": 30.386
+      },
+      "OP1004|Earth Excavation": {
+        "idle_time_min": 26.65,
+        "idle_pct": 30.455,
+        "fuel_rate_lph": 13.294,
+        "cycle_time_s": 20.389
+      },
+      "OP1004|Grading": {
+        "idle_time_min": 15.645,
+        "idle_pct": 30.684,
+        "fuel_rate_lph": 10.124,
+        "cycle_time_s": 93.386
+      },
+      "OP1004|Material Loading": {
+        "idle_time_min": 12.77,
+        "idle_pct": 29.481,
+        "fuel_rate_lph": 11.126,
+        "cycle_time_s": 36.109
+      },
+      "OP1004|Trenching": {
+        "idle_time_min": 19.03,
+        "idle_pct": 29.584,
+        "fuel_rate_lph": 12.404,
+        "cycle_time_s": 24.091
+      },
+      "OP1005|Demolition": {
+        "idle_time_min": 43.22,
+        "idle_pct": 31.249,
+        "fuel_rate_lph": 15.29,
+        "cycle_time_s": 30.878
+      },
+      "OP1005|Earth Excavation": {
+        "idle_time_min": 29.46,
+        "idle_pct": 30.071,
+        "fuel_rate_lph": 13.227,
+        "cycle_time_s": 20.154
+      },
+      "OP1005|Grading": {
+        "idle_time_min": 15.82,
+        "idle_pct": 29.553,
+        "fuel_rate_lph": 10.197,
+        "cycle_time_s": 90.13
+      },
+      "OP1005|Material Loading": {
+        "idle_time_min": 15.22,
+        "idle_pct": 31.552,
+        "fuel_rate_lph": 11.215,
+        "cycle_time_s": 35.142
+      },
+      "OP1005|Trenching": {
+        "idle_time_min": 20.33,
+        "idle_pct": 29.277,
+        "fuel_rate_lph": 12.311,
+        "cycle_time_s": 23.772
+      },
+      "OP1006|Demolition": {
+        "idle_time_min": 66.41,
+        "idle_pct": 37.227,
+        "fuel_rate_lph": 14.447,
+        "cycle_time_s": 29.985
+      },
+      "OP1006|Earth Excavation": {
+        "idle_time_min": 45.07,
+        "idle_pct": 36.738,
+        "fuel_rate_lph": 12.291,
+        "cycle_time_s": 19.806
+      },
+      "OP1006|Grading": {
+        "idle_time_min": 27.57,
+        "idle_pct": 37.125,
+        "fuel_rate_lph": 9.4,
+        "cycle_time_s": 91.759
+      },
+      "OP1006|Material Loading": {
+        "idle_time_min": 22.73,
+        "idle_pct": 36.964,
+        "fuel_rate_lph": 10.451,
+        "cycle_time_s": 35.252
+      },
+      "OP1006|Trenching": {
+        "idle_time_min": 35.94,
+        "idle_pct": 37.696,
+        "fuel_rate_lph": 11.456,
+        "cycle_time_s": 24.241
+      },
+      "OP1007|Demolition": {
+        "idle_time_min": 40.375,
+        "idle_pct": 29.205,
+        "fuel_rate_lph": 15.59,
+        "cycle_time_s": 31.237
+      },
+      "OP1007|Earth Excavation": {
+        "idle_time_min": 27.56,
+        "idle_pct": 30.254,
+        "fuel_rate_lph": 12.974,
+        "cycle_time_s": 20.319
+      },
+      "OP1007|Grading": {
+        "idle_time_min": 15.23,
+        "idle_pct": 29.358,
+        "fuel_rate_lph": 10.572,
+        "cycle_time_s": 88.657
+      },
+      "OP1007|Material Loading": {
+        "idle_time_min": 12.55,
+        "idle_pct": 29.348,
+        "fuel_rate_lph": 11.461,
+        "cycle_time_s": 34.969
+      },
+      "OP1007|Trenching": {
+        "idle_time_min": 19.41,
+        "idle_pct": 28.617,
+        "fuel_rate_lph": 12.56,
+        "cycle_time_s": 24.768
+      },
+      "OP1008|Demolition": {
+        "idle_time_min": 44.29,
+        "idle_pct": 31.978,
+        "fuel_rate_lph": 15.392,
+        "cycle_time_s": 29.558
+      },
+      "OP1008|Earth Excavation": {
+        "idle_time_min": 28.76,
+        "idle_pct": 31.007,
+        "fuel_rate_lph": 12.887,
+        "cycle_time_s": 20.339
+      },
+      "OP1008|Grading": {
+        "idle_time_min": 16.45,
+        "idle_pct": 29.243,
+        "fuel_rate_lph": 10.37,
+        "cycle_time_s": 93.109
+      },
+      "OP1008|Material Loading": {
+        "idle_time_min": 14.3,
+        "idle_pct": 31.068,
+        "fuel_rate_lph": 11.358,
+        "cycle_time_s": 34.756
+      },
+      "OP1008|Trenching": {
+        "idle_time_min": 21.46,
+        "idle_pct": 31.244,
+        "fuel_rate_lph": 12.087,
+        "cycle_time_s": 24.459
+      },
+      "OP1009|Demolition": {
+        "idle_time_min": 37.26,
+        "idle_pct": 26.367,
+        "fuel_rate_lph": 16.27,
+        "cycle_time_s": 30.195
+      },
+      "OP1009|Earth Excavation": {
+        "idle_time_min": 24.64,
+        "idle_pct": 26.492,
+        "fuel_rate_lph": 13.646,
+        "cycle_time_s": 20.158
+      },
+      "OP1009|Grading": {
+        "idle_time_min": 16.045,
+        "idle_pct": 28.158,
+        "fuel_rate_lph": 10.115,
+        "cycle_time_s": 92.664
+      },
+      "OP1009|Material Loading": {
+        "idle_time_min": 12.83,
+        "idle_pct": 27.946,
+        "fuel_rate_lph": 11.432,
+        "cycle_time_s": 34.95
+      },
+      "OP1009|Trenching": {
+        "idle_time_min": 17.4,
+        "idle_pct": 25.71,
+        "fuel_rate_lph": 12.983,
+        "cycle_time_s": 23.89
+      },
+      "OP1010|Demolition": {
+        "idle_time_min": 67.095,
+        "idle_pct": 36.953,
+        "fuel_rate_lph": 14.127,
+        "cycle_time_s": 30.795
+      },
+      "OP1010|Earth Excavation": {
+        "idle_time_min": 46.1,
+        "idle_pct": 37.351,
+        "fuel_rate_lph": 12.174,
+        "cycle_time_s": 20.171
+      },
+      "OP1010|Grading": {
+        "idle_time_min": 27.3,
+        "idle_pct": 36.695,
+        "fuel_rate_lph": 9.58,
+        "cycle_time_s": 91.123
+      },
+      "OP1010|Material Loading": {
+        "idle_time_min": 24.725,
+        "idle_pct": 38.122,
+        "fuel_rate_lph": 10.169,
+        "cycle_time_s": 35.286
+      },
+      "OP1010|Trenching": {
+        "idle_time_min": 33.59,
+        "idle_pct": 37.412,
+        "fuel_rate_lph": 11.478,
+        "cycle_time_s": 23.963
+      },
+      "OP1011|Demolition": {
+        "idle_time_min": 38.16,
+        "idle_pct": 27.682,
+        "fuel_rate_lph": 15.679,
+        "cycle_time_s": 30.483
+      },
+      "OP1011|Earth Excavation": {
+        "idle_time_min": 24.79,
+        "idle_pct": 27.84,
+        "fuel_rate_lph": 13.519,
+        "cycle_time_s": 19.952
+      },
+      "OP1011|Grading": {
+        "idle_time_min": 14.005,
+        "idle_pct": 27.258,
+        "fuel_rate_lph": 10.689,
+        "cycle_time_s": 92.702
+      },
+      "OP1011|Material Loading": {
+        "idle_time_min": 12.72,
+        "idle_pct": 28.33,
+        "fuel_rate_lph": 11.633,
+        "cycle_time_s": 35.156
+      },
+      "OP1011|Trenching": {
+        "idle_time_min": 18.59,
+        "idle_pct": 27.971,
+        "fuel_rate_lph": 12.62,
+        "cycle_time_s": 23.54
+      },
+      "OP1012|Demolition": {
+        "idle_time_min": 61.71,
+        "idle_pct": 36.036,
+        "fuel_rate_lph": 14.222,
+        "cycle_time_s": 29.493
+      },
+      "OP1012|Earth Excavation": {
+        "idle_time_min": 43.2,
+        "idle_pct": 35.653,
+        "fuel_rate_lph": 12.206,
+        "cycle_time_s": 19.771
+      },
+      "OP1012|Grading": {
+        "idle_time_min": 25.59,
+        "idle_pct": 34.201,
+        "fuel_rate_lph": 9.418,
+        "cycle_time_s": 93.15
+      },
+      "OP1012|Material Loading": {
+        "idle_time_min": 18.73,
+        "idle_pct": 33.66,
+        "fuel_rate_lph": 10.955,
+        "cycle_time_s": 35.685
+      },
+      "OP1012|Trenching": {
+        "idle_time_min": 32.29,
+        "idle_pct": 34.932,
+        "fuel_rate_lph": 11.592,
+        "cycle_time_s": 24.281
+      },
+      "OP1013|Demolition": {
+        "idle_time_min": 37.13,
+        "idle_pct": 27.765,
+        "fuel_rate_lph": 15.662,
+        "cycle_time_s": 30.071
+      },
+      "OP1013|Earth Excavation": {
+        "idle_time_min": 24.945,
+        "idle_pct": 28.974,
+        "fuel_rate_lph": 13.547,
+        "cycle_time_s": 20.343
+      },
+      "OP1013|Grading": {
+        "idle_time_min": 16.27,
+        "idle_pct": 29.525,
+        "fuel_rate_lph": 10.26,
+        "cycle_time_s": 93.599
+      },
+      "OP1013|Material Loading": {
+        "idle_time_min": 12.85,
+        "idle_pct": 27.919,
+        "fuel_rate_lph": 11.316,
+        "cycle_time_s": 35.401
+      },
+      "OP1013|Trenching": {
+        "idle_time_min": 19.96,
+        "idle_pct": 28.843,
+        "fuel_rate_lph": 12.653,
+        "cycle_time_s": 24.047
+      },
+      "OP1014|Demolition": {
+        "idle_time_min": 60.22,
+        "idle_pct": 34.95,
+        "fuel_rate_lph": 14.8,
+        "cycle_time_s": 31.528
+      },
+      "OP1014|Earth Excavation": {
+        "idle_time_min": 38.785,
+        "idle_pct": 33.489,
+        "fuel_rate_lph": 12.471,
+        "cycle_time_s": 20.19
+      },
+      "OP1014|Grading": {
+        "idle_time_min": 22.87,
+        "idle_pct": 34.589,
+        "fuel_rate_lph": 9.749,
+        "cycle_time_s": 89.483
+      },
+      "OP1014|Material Loading": {
+        "idle_time_min": 22.27,
+        "idle_pct": 35.599,
+        "fuel_rate_lph": 10.712,
+        "cycle_time_s": 35.921
+      },
+      "OP1014|Trenching": {
+        "idle_time_min": 28.92,
+        "idle_pct": 34.39,
+        "fuel_rate_lph": 11.664,
+        "cycle_time_s": 24.154
+      },
+      "OP1015|Demolition": {
+        "idle_time_min": 63.145,
+        "idle_pct": 35.628,
+        "fuel_rate_lph": 14.082,
+        "cycle_time_s": 30.613
+      },
+      "OP1015|Earth Excavation": {
+        "idle_time_min": 42.47,
+        "idle_pct": 35.101,
+        "fuel_rate_lph": 12.434,
+        "cycle_time_s": 20.031
+      },
+      "OP1015|Grading": {
+        "idle_time_min": 25.705,
+        "idle_pct": 37.189,
+        "fuel_rate_lph": 9.543,
+        "cycle_time_s": 86.77
+      },
+      "OP1015|Material Loading": {
+        "idle_time_min": 21.44,
+        "idle_pct": 35.92,
+        "fuel_rate_lph": 10.516,
+        "cycle_time_s": 34.18
+      },
+      "OP1015|Trenching": {
+        "idle_time_min": 30.99,
+        "idle_pct": 35.004,
+        "fuel_rate_lph": 11.559,
+        "cycle_time_s": 23.991
+      },
+      "OP1016|Demolition": {
+        "idle_time_min": 71.35,
+        "idle_pct": 36.546,
+        "fuel_rate_lph": 14.082,
+        "cycle_time_s": 29.719
+      },
+      "OP1016|Earth Excavation": {
+        "idle_time_min": 47.96,
+        "idle_pct": 34.896,
+        "fuel_rate_lph": 12.593,
+        "cycle_time_s": 20.026
+      },
+      "OP1016|Grading": {
+        "idle_time_min": 29.58,
+        "idle_pct": 37.028,
+        "fuel_rate_lph": 9.741,
+        "cycle_time_s": 91.841
+      },
+      "OP1016|Material Loading": {
+        "idle_time_min": 22.905,
+        "idle_pct": 36.147,
+        "fuel_rate_lph": 10.8,
+        "cycle_time_s": 35.376
+      },
+      "OP1016|Trenching": {
+        "idle_time_min": 37.445,
+        "idle_pct": 36.612,
+        "fuel_rate_lph": 11.458,
+        "cycle_time_s": 24.315
+      },
+      "OP1017|Demolition": {
+        "idle_time_min": 68.9,
+        "idle_pct": 33.902,
+        "fuel_rate_lph": 14.588,
+        "cycle_time_s": 29.152
+      },
+      "OP1017|Earth Excavation": {
+        "idle_time_min": 53.785,
+        "idle_pct": 35.022,
+        "fuel_rate_lph": 12.465,
+        "cycle_time_s": 20.248
+      },
+      "OP1017|Grading": {
+        "idle_time_min": 30.19,
+        "idle_pct": 33.477,
+        "fuel_rate_lph": 9.771,
+        "cycle_time_s": 91.785
+      },
+      "OP1017|Material Loading": {
+        "idle_time_min": 26.77,
+        "idle_pct": 35.925,
+        "fuel_rate_lph": 10.437,
+        "cycle_time_s": 35.217
+      },
+      "OP1017|Trenching": {
+        "idle_time_min": 38.16,
+        "idle_pct": 34.883,
+        "fuel_rate_lph": 11.744,
+        "cycle_time_s": 23.357
+      },
+      "OP1018|Demolition": {
+        "idle_time_min": 42.81,
+        "idle_pct": 29.96,
+        "fuel_rate_lph": 15.048,
+        "cycle_time_s": 30.15
+      },
+      "OP1018|Earth Excavation": {
+        "idle_time_min": 31.45,
+        "idle_pct": 30.932,
+        "fuel_rate_lph": 12.855,
+        "cycle_time_s": 19.834
+      },
+      "OP1018|Grading": {
+        "idle_time_min": 19.63,
+        "idle_pct": 31.916,
+        "fuel_rate_lph": 10.092,
+        "cycle_time_s": 91.385
+      },
+      "OP1018|Material Loading": {
+        "idle_time_min": 15.71,
+        "idle_pct": 32.06,
+        "fuel_rate_lph": 11.064,
+        "cycle_time_s": 34.561
+      },
+      "OP1018|Trenching": {
+        "idle_time_min": 24.54,
+        "idle_pct": 31.272,
+        "fuel_rate_lph": 12.372,
+        "cycle_time_s": 24.332
+      },
+      "OP1019|Demolition": {
+        "idle_time_min": 62.3,
+        "idle_pct": 36.266,
+        "fuel_rate_lph": 14.251,
+        "cycle_time_s": 30.633
+      },
+      "OP1019|Earth Excavation": {
+        "idle_time_min": 39.36,
+        "idle_pct": 34.981,
+        "fuel_rate_lph": 12.181,
+        "cycle_time_s": 19.984
+      },
+      "OP1019|Grading": {
+        "idle_time_min": 25.13,
+        "idle_pct": 36.541,
+        "fuel_rate_lph": 9.384,
+        "cycle_time_s": 89.904
+      },
+      "OP1019|Material Loading": {
+        "idle_time_min": 20.395,
+        "idle_pct": 35.284,
+        "fuel_rate_lph": 10.926,
+        "cycle_time_s": 35.444
+      },
+      "OP1019|Trenching": {
+        "idle_time_min": 27.42,
+        "idle_pct": 33.497,
+        "fuel_rate_lph": 11.88,
+        "cycle_time_s": 24.152
+      },
+      "OP1020|Demolition": {
+        "idle_time_min": 49.06,
+        "idle_pct": 29.694,
+        "fuel_rate_lph": 15.445,
+        "cycle_time_s": 29.671
+      },
+      "OP1020|Earth Excavation": {
+        "idle_time_min": 31.035,
+        "idle_pct": 28.161,
+        "fuel_rate_lph": 13.094,
+        "cycle_time_s": 19.842
+      },
+      "OP1020|Grading": {
+        "idle_time_min": 18.66,
+        "idle_pct": 29.047,
+        "fuel_rate_lph": 10.115,
+        "cycle_time_s": 91.16
+      },
+      "OP1020|Material Loading": {
+        "idle_time_min": 15.57,
+        "idle_pct": 28.571,
+        "fuel_rate_lph": 11.445,
+        "cycle_time_s": 34.899
+      },
+      "OP1020|Trenching": {
+        "idle_time_min": 22.38,
+        "idle_pct": 27.402,
+        "fuel_rate_lph": 12.422,
+        "cycle_time_s": 23.792
+      },
+      "OP1021|Demolition": {
+        "idle_time_min": 48.55,
+        "idle_pct": 28.919,
+        "fuel_rate_lph": 15.846,
+        "cycle_time_s": 29.151
+      },
+      "OP1021|Earth Excavation": {
+        "idle_time_min": 33.54,
+        "idle_pct": 28.714,
+        "fuel_rate_lph": 13.407,
+        "cycle_time_s": 20.113
+      },
+      "OP1021|Grading": {
+        "idle_time_min": 17.82,
+        "idle_pct": 27.273,
+        "fuel_rate_lph": 10.359,
+        "cycle_time_s": 93.783
+      },
+      "OP1021|Material Loading": {
+        "idle_time_min": 15.68,
+        "idle_pct": 28.993,
+        "fuel_rate_lph": 11.31,
+        "cycle_time_s": 35.007
+      },
+      "OP1021|Trenching": {
+        "idle_time_min": 23.84,
+        "idle_pct": 28.418,
+        "fuel_rate_lph": 12.19,
+        "cycle_time_s": 23.953
+      },
+      "OP1022|Demolition": {
+        "idle_time_min": 81.05,
+        "idle_pct": 40.18,
+        "fuel_rate_lph": 13.33,
+        "cycle_time_s": 29.608
+      },
+      "OP1022|Earth Excavation": {
+        "idle_time_min": 53.695,
+        "idle_pct": 39.617,
+        "fuel_rate_lph": 11.822,
+        "cycle_time_s": 20.08
+      },
+      "OP1022|Grading": {
+        "idle_time_min": 31.51,
+        "idle_pct": 38.754,
+        "fuel_rate_lph": 9.23,
+        "cycle_time_s": 92.666
+      },
+      "OP1022|Material Loading": {
+        "idle_time_min": 25.25,
+        "idle_pct": 38.95,
+        "fuel_rate_lph": 10.481,
+        "cycle_time_s": 35.632
+      },
+      "OP1022|Trenching": {
+        "idle_time_min": 39.69,
+        "idle_pct": 39.063,
+        "fuel_rate_lph": 10.928,
+        "cycle_time_s": 23.992
+      },
+      "OP1023|Demolition": {
+        "idle_time_min": 43.88,
+        "idle_pct": 29.053,
+        "fuel_rate_lph": 15.373,
+        "cycle_time_s": 30.335
+      },
+      "OP1023|Earth Excavation": {
+        "idle_time_min": 30.455,
+        "idle_pct": 29.991,
+        "fuel_rate_lph": 13.477,
+        "cycle_time_s": 20.12
+      },
+      "OP1023|Grading": {
+        "idle_time_min": 17.69,
+        "idle_pct": 29.069,
+        "fuel_rate_lph": 10.293,
+        "cycle_time_s": 91.35
+      },
+      "OP1023|Material Loading": {
+        "idle_time_min": 15.165,
+        "idle_pct": 29.493,
+        "fuel_rate_lph": 10.924,
+        "cycle_time_s": 35.217
+      },
+      "OP1023|Trenching": {
+        "idle_time_min": 23.07,
+        "idle_pct": 28.545,
+        "fuel_rate_lph": 12.212,
+        "cycle_time_s": 23.326
+      },
+      "OP1024|Demolition": {
+        "idle_time_min": 65.56,
+        "idle_pct": 34.914,
+        "fuel_rate_lph": 14.549,
+        "cycle_time_s": 30.414
+      },
+      "OP1024|Earth Excavation": {
+        "idle_time_min": 44.955,
+        "idle_pct": 35.69,
+        "fuel_rate_lph": 12.372,
+        "cycle_time_s": 19.908
+      },
+      "OP1024|Grading": {
+        "idle_time_min": 25.5,
+        "idle_pct": 34.993,
+        "fuel_rate_lph": 9.548,
+        "cycle_time_s": 90.583
+      },
+      "OP1024|Material Loading": {
+        "idle_time_min": 22.195,
+        "idle_pct": 35.811,
+        "fuel_rate_lph": 10.765,
+        "cycle_time_s": 36.064
+      },
+      "OP1024|Trenching": {
+        "idle_time_min": 33.57,
+        "idle_pct": 35.218,
+        "fuel_rate_lph": 11.613,
+        "cycle_time_s": 24.482
+      },
+      "OP1025|Demolition": {
+        "idle_time_min": 49.15,
+        "idle_pct": 30.716,
+        "fuel_rate_lph": 14.434,
+        "cycle_time_s": 29.347
+      },
+      "OP1025|Earth Excavation": {
+        "idle_time_min": 32.78,
+        "idle_pct": 30.428,
+        "fuel_rate_lph": 12.887,
+        "cycle_time_s": 20.297
+      },
+      "OP1025|Grading": {
+        "idle_time_min": 19.97,
+        "idle_pct": 30.45,
+        "fuel_rate_lph": 10.204,
+        "cycle_time_s": 93.936
+      },
+      "OP1025|Material Loading": {
+        "idle_time_min": 17.08,
+        "idle_pct": 30.534,
+        "fuel_rate_lph": 10.862,
+        "cycle_time_s": 35.248
+      },
+      "OP1025|Trenching": {
+        "idle_time_min": 23.95,
+        "idle_pct": 30.198,
+        "fuel_rate_lph": 12.404,
+        "cycle_time_s": 24.306
+      },
+      "OP1026|Demolition": {
+        "idle_time_min": 48.47,
+        "idle_pct": 32.001,
+        "fuel_rate_lph": 14.661,
+        "cycle_time_s": 29.478
+      },
+      "OP1026|Earth Excavation": {
+        "idle_time_min": 31.235,
+        "idle_pct": 32.161,
+        "fuel_rate_lph": 13.111,
+        "cycle_time_s": 20.25
+      },
+      "OP1026|Grading": {
+        "idle_time_min": 18.1,
+        "idle_pct": 31.855,
+        "fuel_rate_lph": 9.636,
+        "cycle_time_s": 93.104
+      },
+      "OP1026|Material Loading": {
+        "idle_time_min": 15.91,
+        "idle_pct": 32.454,
+        "fuel_rate_lph": 11.007,
+        "cycle_time_s": 35.706
+      },
+      "OP1026|Trenching": {
+        "idle_time_min": 23.865,
+        "idle_pct": 32.158,
+        "fuel_rate_lph": 12.221,
+        "cycle_time_s": 24.014
+      },
+      "OP1027|Demolition": {
+        "idle_time_min": 40.01,
+        "idle_pct": 25.927,
+        "fuel_rate_lph": 16.309,
+        "cycle_time_s": 30.96
+      },
+      "OP1027|Earth Excavation": {
+        "idle_time_min": 27.355,
+        "idle_pct": 27.445,
+        "fuel_rate_lph": 13.607,
+        "cycle_time_s": 20.095
+      },
+      "OP1027|Grading": {
+        "idle_time_min": 16.58,
+        "idle_pct": 27.837,
+        "fuel_rate_lph": 10.406,
+        "cycle_time_s": 92.895
+      },
+      "OP1027|Material Loading": {
+        "idle_time_min": 12.93,
+        "idle_pct": 26.312,
+        "fuel_rate_lph": 11.602,
+        "cycle_time_s": 34.638
+      },
+      "OP1027|Trenching": {
+        "idle_time_min": 20.54,
+        "idle_pct": 26.875,
+        "fuel_rate_lph": 12.813,
+        "cycle_time_s": 24.332
+      },
+      "OP1028|Demolition": {
+        "idle_time_min": 30.08,
+        "idle_pct": 23.591,
+        "fuel_rate_lph": 16.381,
+        "cycle_time_s": 30.952
+      },
+      "OP1028|Earth Excavation": {
+        "idle_time_min": 23.29,
+        "idle_pct": 25.957,
+        "fuel_rate_lph": 13.76,
+        "cycle_time_s": 20.272
+      },
+      "OP1028|Grading": {
+        "idle_time_min": 14.595,
+        "idle_pct": 26.528,
+        "fuel_rate_lph": 10.482,
+        "cycle_time_s": 94.49
+      },
+      "OP1028|Material Loading": {
+        "idle_time_min": 10.27,
+        "idle_pct": 24.788,
+        "fuel_rate_lph": 11.885,
+        "cycle_time_s": 35.674
+      },
+      "OP1028|Trenching": {
+        "idle_time_min": 17.09,
+        "idle_pct": 25.698,
+        "fuel_rate_lph": 12.873,
+        "cycle_time_s": 23.865
+      },
+      "OP1029|Demolition": {
+        "idle_time_min": 70.84,
+        "idle_pct": 37.705,
+        "fuel_rate_lph": 14.23,
+        "cycle_time_s": 30.095
+      },
+      "OP1029|Earth Excavation": {
+        "idle_time_min": 45.2,
+        "idle_pct": 37.823,
+        "fuel_rate_lph": 12.24,
+        "cycle_time_s": 19.775
+      },
+      "OP1029|Grading": {
+        "idle_time_min": 26.78,
+        "idle_pct": 38.058,
+        "fuel_rate_lph": 9.223,
+        "cycle_time_s": 93.185
+      },
+      "OP1029|Material Loading": {
+        "idle_time_min": 23.02,
+        "idle_pct": 37.127,
+        "fuel_rate_lph": 10.576,
+        "cycle_time_s": 35.142
+      },
+      "OP1029|Trenching": {
+        "idle_time_min": 33.75,
+        "idle_pct": 36.475,
+        "fuel_rate_lph": 11.84,
+        "cycle_time_s": 23.939
+      },
+      "OP1030|Demolition": {
+        "idle_time_min": 61.84,
+        "idle_pct": 35.281,
+        "fuel_rate_lph": 14.722,
+        "cycle_time_s": 29.505
+      },
+      "OP1030|Earth Excavation": {
+        "idle_time_min": 42.14,
+        "idle_pct": 36.118,
+        "fuel_rate_lph": 12.459,
+        "cycle_time_s": 20.089
+      },
+      "OP1030|Grading": {
+        "idle_time_min": 23.765,
+        "idle_pct": 34.351,
+        "fuel_rate_lph": 9.459,
+        "cycle_time_s": 92.8
+      },
+      "OP1030|Material Loading": {
+        "idle_time_min": 21.35,
+        "idle_pct": 36.738,
+        "fuel_rate_lph": 10.546,
+        "cycle_time_s": 35.525
+      },
+      "OP1030|Trenching": {
+        "idle_time_min": 32.82,
+        "idle_pct": 36.305,
+        "fuel_rate_lph": 11.47,
+        "cycle_time_s": 24.505
+      },
+      "OP1031|Demolition": {
+        "idle_time_min": 67.97,
+        "idle_pct": 32.917,
+        "fuel_rate_lph": 14.909,
+        "cycle_time_s": 28.99
+      },
+      "OP1031|Earth Excavation": {
+        "idle_time_min": 44.22,
+        "idle_pct": 33.151,
+        "fuel_rate_lph": 12.855,
+        "cycle_time_s": 20.056
+      },
+      "OP1031|Grading": {
+        "idle_time_min": 26.05,
+        "idle_pct": 31.829,
+        "fuel_rate_lph": 10.137,
+        "cycle_time_s": 91.432
+      },
+      "OP1031|Material Loading": {
+        "idle_time_min": 21.99,
+        "idle_pct": 32.891,
+        "fuel_rate_lph": 10.969,
+        "cycle_time_s": 35.538
+      },
+      "OP1031|Trenching": {
+        "idle_time_min": 32.02,
+        "idle_pct": 32.339,
+        "fuel_rate_lph": 12.191,
+        "cycle_time_s": 23.224
+      },
+      "OP1032|Demolition": {
+        "idle_time_min": 41.13,
+        "idle_pct": 29.896,
+        "fuel_rate_lph": 15.426,
+        "cycle_time_s": 30.402
+      },
+      "OP1032|Earth Excavation": {
+        "idle_time_min": 27.21,
+        "idle_pct": 30.159,
+        "fuel_rate_lph": 12.927,
+        "cycle_time_s": 20.557
+      },
+      "OP1032|Grading": {
+        "idle_time_min": 15.77,
+        "idle_pct": 29.928,
+        "fuel_rate_lph": 10.029,
+        "cycle_time_s": 94.733
+      },
+      "OP1032|Material Loading": {
+        "idle_time_min": 13.925,
+        "idle_pct": 30.731,
+        "fuel_rate_lph": 11.424,
+        "cycle_time_s": 35.751
+      },
+      "OP1032|Trenching": {
+        "idle_time_min": 19.96,
+        "idle_pct": 29.468,
+        "fuel_rate_lph": 12.389,
+        "cycle_time_s": 24.547
+      },
+      "OP1033|Demolition": {
+        "idle_time_min": 57.45,
+        "idle_pct": 34.087,
+        "fuel_rate_lph": 15.473,
+        "cycle_time_s": 31.803
+      },
+      "OP1033|Earth Excavation": {
+        "idle_time_min": 37.71,
+        "idle_pct": 33.509,
+        "fuel_rate_lph": 12.503,
+        "cycle_time_s": 20.106
+      },
+      "OP1033|Grading": {
+        "idle_time_min": 23.18,
+        "idle_pct": 32.665,
+        "fuel_rate_lph": 9.773,
+        "cycle_time_s": 92.369
+      },
+      "OP1033|Material Loading": {
+        "idle_time_min": 18.205,
+        "idle_pct": 33.868,
+        "fuel_rate_lph": 11.144,
+        "cycle_time_s": 35.76
+      },
+      "OP1033|Trenching": {
+        "idle_time_min": 30.64,
+        "idle_pct": 34.062,
+        "fuel_rate_lph": 11.84,
+        "cycle_time_s": 24.101
+      },
+      "OP1034|Demolition": {
+        "idle_time_min": 92.76,
+        "idle_pct": 38.244,
+        "fuel_rate_lph": 14.082,
+        "cycle_time_s": 29.202
+      },
+      "OP1034|Earth Excavation": {
+        "idle_time_min": 59.355,
+        "idle_pct": 38.604,
+        "fuel_rate_lph": 11.751,
+        "cycle_time_s": 19.971
+      },
+      "OP1034|Grading": {
+        "idle_time_min": 37.715,
+        "idle_pct": 38.96,
+        "fuel_rate_lph": 9.401,
+        "cycle_time_s": 92.647
+      },
+      "OP1034|Material Loading": {
+        "idle_time_min": 31.08,
+        "idle_pct": 38.751,
+        "fuel_rate_lph": 10.241,
+        "cycle_time_s": 35.089
+      },
+      "OP1034|Trenching": {
+        "idle_time_min": 45.11,
+        "idle_pct": 37.74,
+        "fuel_rate_lph": 11.276,
+        "cycle_time_s": 24.353
+      },
+      "OP1035|Demolition": {
+        "idle_time_min": 42.45,
+        "idle_pct": 29.869,
+        "fuel_rate_lph": 15.257,
+        "cycle_time_s": 29.896
+      },
+      "OP1035|Earth Excavation": {
+        "idle_time_min": 29.38,
+        "idle_pct": 30.177,
+        "fuel_rate_lph": 13.344,
+        "cycle_time_s": 19.988
+      },
+      "OP1035|Grading": {
+        "idle_time_min": 16.88,
+        "idle_pct": 29.803,
+        "fuel_rate_lph": 10.198,
+        "cycle_time_s": 93.289
+      },
+      "OP1035|Material Loading": {
+        "idle_time_min": 15.16,
+        "idle_pct": 30.725,
+        "fuel_rate_lph": 11.251,
+        "cycle_time_s": 35.359
+      },
+      "OP1035|Trenching": {
+        "idle_time_min": 21.635,
+        "idle_pct": 30.391,
+        "fuel_rate_lph": 12.434,
+        "cycle_time_s": 24.316
+      },
+      "OP1036|Demolition": {
+        "idle_time_min": 72.92,
+        "idle_pct": 35.396,
+        "fuel_rate_lph": 14.326,
+        "cycle_time_s": 30.319
+      },
+      "OP1036|Earth Excavation": {
+        "idle_time_min": 48.89,
+        "idle_pct": 36.193,
+        "fuel_rate_lph": 12.177,
+        "cycle_time_s": 19.841
+      },
+      "OP1036|Grading": {
+        "idle_time_min": 29.755,
+        "idle_pct": 37.003,
+        "fuel_rate_lph": 9.448,
+        "cycle_time_s": 92.644
+      },
+      "OP1036|Material Loading": {
+        "idle_time_min": 25.495,
+        "idle_pct": 36.396,
+        "fuel_rate_lph": 10.776,
+        "cycle_time_s": 34.775
+      },
+      "OP1036|Trenching": {
+        "idle_time_min": 37.17,
+        "idle_pct": 35.969,
+        "fuel_rate_lph": 11.587,
+        "cycle_time_s": 24.354
+      },
+      "OP1037|Demolition": {
+        "idle_time_min": 96.23,
+        "idle_pct": 42.81,
+        "fuel_rate_lph": 12.9,
+        "cycle_time_s": 28.946
+      },
+      "OP1037|Earth Excavation": {
+        "idle_time_min": 67.3,
+        "idle_pct": 43.944,
+        "fuel_rate_lph": 11.156,
+        "cycle_time_s": 20.205
+      },
+      "OP1037|Grading": {
+        "idle_time_min": 39.855,
+        "idle_pct": 43.848,
+        "fuel_rate_lph": 8.856,
+        "cycle_time_s": 90.617
+      },
+      "OP1037|Material Loading": {
+        "idle_time_min": 30.39,
+        "idle_pct": 41.235,
+        "fuel_rate_lph": 9.907,
+        "cycle_time_s": 35.382
+      },
+      "OP1037|Trenching": {
+        "idle_time_min": 51.98,
+        "idle_pct": 43.913,
+        "fuel_rate_lph": 10.474,
+        "cycle_time_s": 23.742
+      },
+      "OP1038|Demolition": {
+        "idle_time_min": 54.26,
+        "idle_pct": 32.755,
+        "fuel_rate_lph": 15.146,
+        "cycle_time_s": 30.102
+      },
+      "OP1038|Earth Excavation": {
+        "idle_time_min": 35.86,
+        "idle_pct": 33.283,
+        "fuel_rate_lph": 12.715,
+        "cycle_time_s": 20.122
+      },
+      "OP1038|Grading": {
+        "idle_time_min": 20.36,
+        "idle_pct": 32.346,
+        "fuel_rate_lph": 9.804,
+        "cycle_time_s": 90.436
+      },
+      "OP1038|Material Loading": {
+        "idle_time_min": 17.41,
+        "idle_pct": 33.248,
+        "fuel_rate_lph": 10.689,
+        "cycle_time_s": 35.788
+      },
+      "OP1038|Trenching": {
+        "idle_time_min": 27.84,
+        "idle_pct": 34.584,
+        "fuel_rate_lph": 11.892,
+        "cycle_time_s": 24.176
+      },
+      "OP1039|Demolition": {
+        "idle_time_min": 51.685,
+        "idle_pct": 29.344,
+        "fuel_rate_lph": 15.444,
+        "cycle_time_s": 30.721
+      },
+      "OP1039|Earth Excavation": {
+        "idle_time_min": 35.325,
+        "idle_pct": 31.617,
+        "fuel_rate_lph": 12.953,
+        "cycle_time_s": 19.796
+      },
+      "OP1039|Grading": {
+        "idle_time_min": 20.22,
+        "idle_pct": 28.791,
+        "fuel_rate_lph": 10.321,
+        "cycle_time_s": 94.966
+      },
+      "OP1039|Material Loading": {
+        "idle_time_min": 17.56,
+        "idle_pct": 31.517,
+        "fuel_rate_lph": 11.165,
+        "cycle_time_s": 34.945
+      },
+      "OP1039|Trenching": {
+        "idle_time_min": 26.59,
+        "idle_pct": 29.886,
+        "fuel_rate_lph": 12.019,
+        "cycle_time_s": 24.136
+      },
+      "OP1040|Demolition": {
+        "idle_time_min": 47.825,
+        "idle_pct": 27.919,
+        "fuel_rate_lph": 15.458,
+        "cycle_time_s": 31.078
+      },
+      "OP1040|Earth Excavation": {
+        "idle_time_min": 32.4,
+        "idle_pct": 28.936,
+        "fuel_rate_lph": 13.179,
+        "cycle_time_s": 19.747
+      },
+      "OP1040|Grading": {
+        "idle_time_min": 17.65,
+        "idle_pct": 28.656,
+        "fuel_rate_lph": 10.15,
+        "cycle_time_s": 90.733
+      },
+      "OP1040|Material Loading": {
+        "idle_time_min": 16.7,
+        "idle_pct": 28.534,
+        "fuel_rate_lph": 11.541,
+        "cycle_time_s": 34.664
+      },
+      "OP1040|Trenching": {
+        "idle_time_min": 22.455,
+        "idle_pct": 28.533,
+        "fuel_rate_lph": 12.411,
+        "cycle_time_s": 24.769
+      },
+      "OP1041|Demolition": {
+        "idle_time_min": 75.32,
+        "idle_pct": 36.438,
+        "fuel_rate_lph": 14.437,
+        "cycle_time_s": 29.488
+      },
+      "OP1041|Earth Excavation": {
+        "idle_time_min": 49.465,
+        "idle_pct": 34.795,
+        "fuel_rate_lph": 12.485,
+        "cycle_time_s": 19.922
+      },
+      "OP1041|Grading": {
+        "idle_time_min": 28.625,
+        "idle_pct": 35.261,
+        "fuel_rate_lph": 9.734,
+        "cycle_time_s": 91.029
+      },
+      "OP1041|Material Loading": {
+        "idle_time_min": 23.88,
+        "idle_pct": 34.519,
+        "fuel_rate_lph": 10.904,
+        "cycle_time_s": 34.757
+      },
+      "OP1041|Trenching": {
+        "idle_time_min": 37.025,
+        "idle_pct": 34.089,
+        "fuel_rate_lph": 11.795,
+        "cycle_time_s": 24.524
+      },
+      "OP1042|Demolition": {
+        "idle_time_min": 72.925,
+        "idle_pct": 35.261,
+        "fuel_rate_lph": 13.916,
+        "cycle_time_s": 30.442
+      },
+      "OP1042|Earth Excavation": {
+        "idle_time_min": 47.86,
+        "idle_pct": 35.306,
+        "fuel_rate_lph": 12.348,
+        "cycle_time_s": 20.291
+      },
+      "OP1042|Grading": {
+        "idle_time_min": 29.14,
+        "idle_pct": 34.113,
+        "fuel_rate_lph": 9.44,
+        "cycle_time_s": 88.611
+      },
+      "OP1042|Material Loading": {
+        "idle_time_min": 23.76,
+        "idle_pct": 35.705,
+        "fuel_rate_lph": 10.773,
+        "cycle_time_s": 34.364
+      },
+      "OP1042|Trenching": {
+        "idle_time_min": 34.31,
+        "idle_pct": 35.192,
+        "fuel_rate_lph": 11.599,
+        "cycle_time_s": 23.948
+      },
+      "OP1043|Demolition": {
+        "idle_time_min": 98.54,
+        "idle_pct": 41.879,
+        "fuel_rate_lph": 13.224,
+        "cycle_time_s": 30.333
+      },
+      "OP1043|Earth Excavation": {
+        "idle_time_min": 64.09,
+        "idle_pct": 41.585,
+        "fuel_rate_lph": 11.622,
+        "cycle_time_s": 20.267
+      },
+      "OP1043|Grading": {
+        "idle_time_min": 37.825,
+        "idle_pct": 42.234,
+        "fuel_rate_lph": 9.046,
+        "cycle_time_s": 90.324
+      },
+      "OP1043|Material Loading": {
+        "idle_time_min": 33.06,
+        "idle_pct": 41.628,
+        "fuel_rate_lph": 9.802,
+        "cycle_time_s": 35.473
+      },
+      "OP1043|Trenching": {
+        "idle_time_min": 50.535,
+        "idle_pct": 40.89,
+        "fuel_rate_lph": 10.909,
+        "cycle_time_s": 24.317
+      },
+      "OP1044|Demolition": {
+        "idle_time_min": 43.64,
+        "idle_pct": 30.323,
+        "fuel_rate_lph": 14.881,
+        "cycle_time_s": 31.041
+      },
+      "OP1044|Earth Excavation": {
+        "idle_time_min": 26.9,
+        "idle_pct": 28.755,
+        "fuel_rate_lph": 13.377,
+        "cycle_time_s": 20.131
+      },
+      "OP1044|Grading": {
+        "idle_time_min": 14.69,
+        "idle_pct": 28.215,
+        "fuel_rate_lph": 10.394,
+        "cycle_time_s": 90.528
+      },
+      "OP1044|Material Loading": {
+        "idle_time_min": 13.33,
+        "idle_pct": 29.016,
+        "fuel_rate_lph": 11.38,
+        "cycle_time_s": 36.291
+      },
+      "OP1044|Trenching": {
+        "idle_time_min": 22.27,
+        "idle_pct": 30.374,
+        "fuel_rate_lph": 12.116,
+        "cycle_time_s": 24.192
+      },
+      "OP1045|Demolition": {
+        "idle_time_min": 68.06,
+        "idle_pct": 33.905,
+        "fuel_rate_lph": 14.417,
+        "cycle_time_s": 29.663
+      },
+      "OP1045|Earth Excavation": {
+        "idle_time_min": 44.74,
+        "idle_pct": 32.98,
+        "fuel_rate_lph": 12.517,
+        "cycle_time_s": 19.827
+      },
+      "OP1045|Grading": {
+        "idle_time_min": 24.93,
+        "idle_pct": 32.504,
+        "fuel_rate_lph": 9.821,
+        "cycle_time_s": 90.745
+      },
+      "OP1045|Material Loading": {
+        "idle_time_min": 22.26,
+        "idle_pct": 34.206,
+        "fuel_rate_lph": 10.896,
+        "cycle_time_s": 35.16
+      },
+      "OP1045|Trenching": {
+        "idle_time_min": 32.77,
+        "idle_pct": 32.789,
+        "fuel_rate_lph": 11.794,
+        "cycle_time_s": 25.052
+      },
+      "OP1046|Demolition": {
+        "idle_time_min": 51.29,
+        "idle_pct": 29.087,
+        "fuel_rate_lph": 15.45,
+        "cycle_time_s": 30.586
+      },
+      "OP1046|Earth Excavation": {
+        "idle_time_min": 35.8,
+        "idle_pct": 30.006,
+        "fuel_rate_lph": 13.049,
+        "cycle_time_s": 19.598
+      },
+      "OP1046|Grading": {
+        "idle_time_min": 21.51,
+        "idle_pct": 28.745,
+        "fuel_rate_lph": 10.183,
+        "cycle_time_s": 92.212
+      },
+      "OP1046|Material Loading": {
+        "idle_time_min": 18.615,
+        "idle_pct": 30.248,
+        "fuel_rate_lph": 11.398,
+        "cycle_time_s": 34.523
+      },
+      "OP1046|Trenching": {
+        "idle_time_min": 27.99,
+        "idle_pct": 29.473,
+        "fuel_rate_lph": 12.568,
+        "cycle_time_s": 24.145
+      },
+      "OP1047|Demolition": {
+        "idle_time_min": 49.05,
+        "idle_pct": 27.54,
+        "fuel_rate_lph": 15.633,
+        "cycle_time_s": 30.618
+      },
+      "OP1047|Earth Excavation": {
+        "idle_time_min": 30.125,
+        "idle_pct": 27.525,
+        "fuel_rate_lph": 13.318,
+        "cycle_time_s": 19.964
+      },
+      "OP1047|Grading": {
+        "idle_time_min": 17.52,
+        "idle_pct": 27.392,
+        "fuel_rate_lph": 10.214,
+        "cycle_time_s": 90.393
+      },
+      "OP1047|Material Loading": {
+        "idle_time_min": 13.85,
+        "idle_pct": 27.011,
+        "fuel_rate_lph": 11.793,
+        "cycle_time_s": 35.417
+      },
+      "OP1047|Trenching": {
+        "idle_time_min": 22.88,
+        "idle_pct": 27.617,
+        "fuel_rate_lph": 12.695,
+        "cycle_time_s": 24.908
+      },
+      "OP1048|Demolition": {
+        "idle_time_min": 72.385,
+        "idle_pct": 33.341,
+        "fuel_rate_lph": 14.41,
+        "cycle_time_s": 29.949
+      },
+      "OP1048|Earth Excavation": {
+        "idle_time_min": 48.11,
+        "idle_pct": 34.083,
+        "fuel_rate_lph": 12.514,
+        "cycle_time_s": 20.39
+      },
+      "OP1048|Grading": {
+        "idle_time_min": 25.32,
+        "idle_pct": 32.943,
+        "fuel_rate_lph": 9.943,
+        "cycle_time_s": 90.582
+      },
+      "OP1048|Material Loading": {
+        "idle_time_min": 25.47,
+        "idle_pct": 35.544,
+        "fuel_rate_lph": 10.586,
+        "cycle_time_s": 34.141
+      },
+      "OP1048|Trenching": {
+        "idle_time_min": 34.6,
+        "idle_pct": 34.375,
+        "fuel_rate_lph": 11.885,
+        "cycle_time_s": 23.933
+      },
+      "OP1049|Demolition": {
+        "idle_time_min": 108.66,
+        "idle_pct": 45.162,
+        "fuel_rate_lph": 12.699,
+        "cycle_time_s": 30.347
+      },
+      "OP1049|Earth Excavation": {
+        "idle_time_min": 71.525,
+        "idle_pct": 43.864,
+        "fuel_rate_lph": 11.232,
+        "cycle_time_s": 20.148
+      },
+      "OP1049|Grading": {
+        "idle_time_min": 39.42,
+        "idle_pct": 43.077,
+        "fuel_rate_lph": 8.563,
+        "cycle_time_s": 92.544
+      },
+      "OP1049|Material Loading": {
+        "idle_time_min": 37.0,
+        "idle_pct": 44.644,
+        "fuel_rate_lph": 9.49,
+        "cycle_time_s": 35.776
+      },
+      "OP1049|Trenching": {
+        "idle_time_min": 60.77,
+        "idle_pct": 44.567,
+        "fuel_rate_lph": 10.128,
+        "cycle_time_s": 23.543
+      },
+      "OP1050|Demolition": {
+        "idle_time_min": 110.57,
+        "idle_pct": 43.789,
+        "fuel_rate_lph": 13.138,
+        "cycle_time_s": 29.489
+      },
+      "OP1050|Earth Excavation": {
+        "idle_time_min": 73.39,
+        "idle_pct": 44.161,
+        "fuel_rate_lph": 11.406,
+        "cycle_time_s": 20.206
+      },
+      "OP1050|Grading": {
+        "idle_time_min": 41.51,
+        "idle_pct": 43.243,
+        "fuel_rate_lph": 8.858,
+        "cycle_time_s": 91.247
+      },
+      "OP1050|Material Loading": {
+        "idle_time_min": 36.24,
+        "idle_pct": 44.317,
+        "fuel_rate_lph": 9.591,
+        "cycle_time_s": 36.129
+      },
+      "OP1050|Trenching": {
+        "idle_time_min": 56.82,
+        "idle_pct": 43.505,
+        "fuel_rate_lph": 10.633,
+        "cycle_time_s": 24.412
+      }
+    },
+    "task_type": {
+      "Demolition": {
+        "idle_time_min": 57.76,
+        "idle_pct": 32.98,
+        "fuel_rate_lph": 14.763,
+        "cycle_time_s": 30.101
+      },
+      "Earth Excavation": {
+        "idle_time_min": 37.52,
+        "idle_pct": 32.813,
+        "fuel_rate_lph": 12.69,
+        "cycle_time_s": 20.089
+      },
+      "Grading": {
+        "idle_time_min": 22.21,
+        "idle_pct": 32.947,
+        "fuel_rate_lph": 9.834,
+        "cycle_time_s": 91.85
+      },
+      "Material Loading": {
+        "idle_time_min": 18.82,
+        "idle_pct": 33.252,
+        "fuel_rate_lph": 10.904,
+        "cycle_time_s": 35.276
+      },
+      "Trenching": {
+        "idle_time_min": 28.34,
+        "idle_pct": 32.988,
+        "fuel_rate_lph": 11.906,
+        "cycle_time_s": 24.144
+      }
+    }
+  },
+  "versions": {
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.4.6",
+    "joblib": "1.6.0"
+  },
+  "metrics": {
+    "test_rows": 4000,
+    "test_anomaly_rate": 0.0385,
+    "isolation_forest_only": {
+      "precision": 0.66,
+      "recall": 0.682,
+      "f1": 0.671,
+      "recall_by_type": {
+        "excessive_idling": 0.727,
+        "fuel_spike": 1.0,
+        "abnormal_cycle_time": 0.837,
+        "unsafe_operation": 0.0
+      },
+      "flagged_rate": 0.0398
+    },
+    "hybrid_detect": {
+      "precision": 0.743,
+      "recall": 0.974,
+      "f1": 0.843,
+      "recall_by_type": {
+        "excessive_idling": 0.932,
+        "fuel_spike": 1.0,
+        "abnormal_cycle_time": 0.977,
+        "unsafe_operation": 1.0
+      },
+      "flagged_rate": 0.0505,
+      "correct_type_rate_on_true_anomalies": 0.974
+    }
+  }
+}
