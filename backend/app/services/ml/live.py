@@ -21,7 +21,7 @@ from app.schemas import (
     TaskTimePrediction,
     TaskTimeRequest,
 )
-from app.services.ml import live_anomaly, live_safety, live_task_time, stub
+from app.services.ml import live_anomaly, live_safety, live_task_time, live_training, stub
 
 logger = logging.getLogger(__name__)
 T = TypeVar("T")
@@ -132,5 +132,11 @@ def detect_anomalies(state: LiveState, operator_baseline: dict) -> list[AnomalyC
 
 def recommend_training(anomalies: list[Anomaly], incidents: list[Incident],
                        modules: list[Module]) -> list[tuple[str, str, str]]:
-    # Phase A7 replaces this with the real recommender.
-    return stub.recommend_training(anomalies, incidents, modules)
+    # Works without artifacts; anomaly_meta (if loaded) adds the "weakest area" upskilling picks.
+    _ensure_loaded()
+    try:
+        meta = _anomaly[1] if _anomaly is not None else None
+        return live_training.recommend(anomalies, incidents, modules, meta)
+    except Exception as exc:
+        _fallback("recommend_training", exc)
+        return stub.recommend_training(anomalies, incidents, modules)

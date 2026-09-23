@@ -11,23 +11,33 @@ import pandas as pd
 
 TASK_TYPES = ["Earth Excavation", "Trenching", "Material Loading", "Grading", "Demolition"]
 BASELINE_KEYS = ["idle_time_min", "idle_pct", "fuel_rate_lph", "cycle_time_s"]
+LIVE_CYCLE_METRICS = ("cycle_time", "loading_cycle_time")  # sim's instantaneous cycle time (s)
 
 
 def _safe_div(num: float, den: float) -> float:
     return num / den if den > 0 else 0.0
 
 
+def _live_cycle_time(state: Mapping[str, Any]) -> float | None:
+    for metric in state.get("task_metrics") or []:
+        if metric.get("key") in LIVE_CYCLE_METRICS and float(metric.get("value") or 0) > 0:
+            return float(metric["value"])
+    return None
+
+
 def features(state: Mapping[str, Any]) -> dict[str, float]:
-    """Shared definitions (docs/TRACK_A.md). The live fuel_rate_lph is used when present so a
-    spike shows up immediately instead of slowly in the session average."""
+    """Shared definitions (docs/TRACK_A.md), with two live-state preferences so a change shows up
+    immediately instead of slowly in cumulative averages: the live fuel_rate_lph and the sim's
+    instantaneous cycle-time metric (its cumulative operating time also includes idle time)."""
     op, idle = float(state["operating_time_min"]), float(state["idle_time_min"])
     fuel, cycles = float(state["fuel_used_l"]), float(state.get("load_cycles") or 0)
     engine_on = op + idle
     rate = state.get("fuel_rate_lph")
+    live_cycle = _live_cycle_time(state)
     return {
         "idle_pct": _safe_div(idle, engine_on) * 100,
         "fuel_rate_lph": float(rate) if rate is not None else _safe_div(fuel, engine_on / 60),
-        "cycle_time_s": _safe_div(op * 60, cycles),
+        "cycle_time_s": live_cycle if live_cycle is not None else _safe_div(op * 60, cycles),
         "fuel_per_cycle_l": _safe_div(fuel, cycles),
     }
 
@@ -35,6 +45,9 @@ def features(state: Mapping[str, Any]) -> dict[str, float]:
 def model_score(model: Any, meta: Mapping[str, Any], state: Mapping[str, Any]) -> float:
     """IsolationForest score normalised to 0-1 with the training percentiles in anomaly_meta."""
     row = features(state)
+    # The model was trained on fuel per engine-on hour (shared definition), not the live working rate
+    engine_on = float(state["operating_time_min"]) + float(state["idle_time_min"])
+    row["fuel_rate_lph"] = _safe_div(float(state["fuel_used_l"]), engine_on / 60)
     for t in TASK_TYPES:
         row[f"task_type={t}"] = 1.0 if state.get("task_type") == t else 0.0
     X = pd.DataFrame([row])[meta["feature_columns"]]
@@ -79,6 +92,10 @@ def detect(meta: Mapping[str, Any], state: Mapping[str, Any], if_score: float,
     task_type = state.get("task_type")
     feats = features(state)
     base = resolve_baseline(meta, operator_id, task_type, fallback_baseline)
+    # A live fuel_rate_lph is a working rate (per productive hour). The backend's baseline uses the
+    # same basis; the artifact's is per engine-on hour (includes idle), so prefer the backend's here.
+    if state.get("fuel_rate_lph") is not None and fallback_baseline and fallback_baseline.get("fuel_rate_lph"):
+        base["fuel_rate_lph"] = (float(fallback_baseline["fuel_rate_lph"]), "your usual")
     engine_on = float(state["operating_time_min"]) + float(state["idle_time_min"])
 
     def ratio(obs: float, key: str) -> float:
