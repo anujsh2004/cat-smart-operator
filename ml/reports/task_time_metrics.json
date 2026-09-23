@@ -1,0 +1,21 @@
+{
+  "test_rows": 4000,
+  "metrics": {
+    "baseline_estimated_time": {
+      "MAE": 16.114,
+      "RMSE": 20.967,
+      "R2": 0.4221
+    },
+    "baseline_task_type_mean": {
+      "MAE": 9.515,
+      "RMSE": 12.633,
+      "R2": 0.7902
+    },
+    "xgb_task_time_v1": {
+      "MAE": 4.328,
+      "RMSE": 5.944,
+      "R2": 0.9536
+    }
+  },
+  "beats_baselines_on_mae": true
+}

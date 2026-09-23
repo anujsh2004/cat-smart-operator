@@ -1,0 +1,46 @@
+{
+  "runtime": "rules",
+  "base_score": 10,
+  "rule_weights": {
+    "seatbelt": 30,
+    "people_in_zone": 40,
+    "proximity_warning": 20,
+    "proximity_danger": 30,
+    "interaction": 10,
+    "weather_bad": 12,
+    "weather_windy": 6,
+    "speed_near_people": 10
+  },
+  "levels": {
+    "LOW": "<40",
+    "MEDIUM": "40-69",
+    "HIGH": ">=70"
+  },
+  "logistic_regression": {
+    "target": "safety_alert_triggered",
+    "coefficients": {
+      "unfastened": 1.453,
+      "people_in_zone": 5.402,
+      "proximity_lt_5": 5.141,
+      "bad_weather": 3.754,
+      "unfastened_x_people": 2.818
+    },
+    "intercept": -10.451,
+    "test_accuracy": 0.9587,
+    "test_roc_auc": 0.9888,
+    "rule_ranking": [
+      "people_in_zone",
+      "unfastened",
+      "proximity_lt_5",
+      "bad_weather",
+      "unfastened_x_people"
+    ],
+    "lr_ranking": [
+      "people_in_zone",
+      "proximity_lt_5",
+      "bad_weather",
+      "unfastened_x_people",
+      "unfastened"
+    ]
+  }
+}

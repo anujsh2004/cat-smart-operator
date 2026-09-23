@@ -1,0 +1,21 @@
+machine_id,model,machine_type,age_yrs,engine_hours
+EXC001,320 GC,Excavator,2,1530.0
+EXC002,336,Excavator,8,5866.0
+EXC003,323,Excavator,6,4636.1
+EXC004,330,Excavator,5,3789.5
+EXC005,323,Excavator,7,6266.6
+EXC006,323,Excavator,2,1571.3
+EXC007,323,Excavator,7,5857.0
+EXC008,330,Excavator,8,5737.3
+EXC009,320 GC,Excavator,3,2243.1
+EXC010,336,Excavator,5,3604.5
+EXC011,320 GC,Excavator,6,5075.0
+EXC012,323,Excavator,8,6522.6
+WL001,966,Wheel Loader,7,5493.1
+WL002,950 GC,Wheel Loader,1,783.8
+WL003,966,Wheel Loader,5,4055.7
+WL004,950 GC,Wheel Loader,2,1563.6
+DZ001,D8T,Dozer,10,6972.1
+DZ002,D6,Dozer,6,5181.2
+MG001,140,Motor Grader,5,4011.4
+MG002,140,Motor Grader,5,3986.9

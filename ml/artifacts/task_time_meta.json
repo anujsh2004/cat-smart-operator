@@ -1,0 +1,95 @@
+{
+  "model": "xgb_task_time_v1",
+  "features": [
+    "task_type",
+    "operator_skill",
+    "weather",
+    "ground_condition",
+    "operator_experience_yrs",
+    "machine_age_yrs",
+    "temperature_c"
+  ],
+  "feature_columns": [
+    "operator_experience_yrs",
+    "machine_age_yrs",
+    "temperature_c",
+    "task_type=Earth Excavation",
+    "task_type=Trenching",
+    "task_type=Material Loading",
+    "task_type=Grading",
+    "task_type=Demolition",
+    "operator_skill=Beginner",
+    "operator_skill=Intermediate",
+    "operator_skill=Expert",
+    "weather=Sunny",
+    "weather=Cloudy",
+    "weather=Windy",
+    "weather=Rainy",
+    "weather=Foggy",
+    "ground_condition=Firm",
+    "ground_condition=Loose",
+    "ground_condition=Wet",
+    "ground_condition=Rocky"
+  ],
+  "categories": {
+    "task_type": [
+      "Earth Excavation",
+      "Trenching",
+      "Material Loading",
+      "Grading",
+      "Demolition"
+    ],
+    "operator_skill": [
+      "Beginner",
+      "Intermediate",
+      "Expert"
+    ],
+    "weather": [
+      "Sunny",
+      "Cloudy",
+      "Windy",
+      "Rainy",
+      "Foggy"
+    ],
+    "ground_condition": [
+      "Firm",
+      "Loose",
+      "Wet",
+      "Rocky"
+    ]
+  },
+  "target": "actual_time_min",
+  "historical_avg_min": {
+    "Demolition": 118.99,
+    "Earth Excavation": 78.95,
+    "Grading": 46.39,
+    "Material Loading": 38.91,
+    "Trenching": 59.02
+  },
+  "residual_std": 5.944,
+  "band_z": 1.28,
+  "metrics": {
+    "baseline_estimated_time": {
+      "MAE": 16.114,
+      "RMSE": 20.967,
+      "R2": 0.4221
+    },
+    "baseline_task_type_mean": {
+      "MAE": 9.515,
+      "RMSE": 12.633,
+      "R2": 0.7902
+    },
+    "xgb_task_time_v1": {
+      "MAE": 4.328,
+      "RMSE": 5.944,
+      "R2": 0.9536
+    }
+  },
+  "versions": {
+    "xgboost": "3.2.0",
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.4.6",
+    "joblib": "1.6.0"
+  }
+}

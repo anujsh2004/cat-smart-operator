@@ -1,0 +1,6 @@
+task_id,operator_id,machine_id,task_type,site_zone,scheduled_start,weather,ground_condition,estimated_time_min
+T001,OP1001,EXC001,Earth Excavation,Pit A,2026-09-23T08:00:00,Sunny,Firm,60.0
+T002,OP1001,EXC001,Trenching,Pit B,2026-09-23T09:15:00,Rainy,Wet,45.0
+T003,OP1001,EXC001,Material Loading,Haul Road,2026-09-23T10:15:00,Cloudy,Loose,30.0
+T004,OP1001,EXC001,Grading,North Bench,2026-09-23T11:30:00,Sunny,Firm,35.0
+T005,OP1001,EXC001,Demolition,Old Structure,2026-09-23T13:00:00,Windy,Rocky,90.0
