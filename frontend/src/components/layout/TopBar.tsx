@@ -42,7 +42,7 @@ function LiveClock() {
   }, []);
   return (
     <span className="tabular font-mono text-lg font-bold">
-      {now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })}
+      {now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23" })}
     </span>
   );
 }

@@ -257,3 +257,24 @@ export function QueryBlock<T>({
   if (query.isError) return <ErrorState error={query.error} onRetry={() => query.refetch()} />;
   return <>{skeleton ?? <Skeleton />}</>;
 }
+
+// --- Progress bar ---
+
+export function ProgressBar({ value, tone = "accent", label }: { value: number; tone?: "accent" | "good"; label?: string }) {
+  const pct = Math.max(0, Math.min(100, value));
+  return (
+    <div
+      className="h-3 w-full overflow-hidden rounded-full bg-raised"
+      role="progressbar"
+      aria-valuenow={pct}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-label={label}
+    >
+      <div
+        className={cx("h-full rounded-full transition-[width] duration-700", tone === "good" ? "bg-good" : "bg-accent")}
+        style={{ width: `${pct}%` }}
+      />
+    </div>
+  );
+}

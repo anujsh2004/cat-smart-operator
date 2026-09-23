@@ -4,10 +4,10 @@ import type { EventType, ModuleCategory, ModuleFormat } from "@/api/types";
 export const parseTs = (iso: string) => new Date(iso);
 
 export const fmtTime = (iso: string) =>
-  parseTs(iso).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  parseTs(iso).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
 
 export const fmtDateTime = (iso: string) =>
-  parseTs(iso).toLocaleString([], { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" });
+  parseTs(iso).toLocaleString([], { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
 
 export const fmtDay = (isoDate: string) =>
   new Date(isoDate + "T00:00:00").toLocaleDateString([], { weekday: "short", day: "2-digit" });
