@@ -26,6 +26,15 @@ def list_incidents(db: Session, *, machine_id: str | None = None, operator_id: s
     return list(db.scalars(stmt.order_by(models.Incident.timestamp.desc()).limit(limit)))
 
 
+def open_auto_incidents(db: Session, machine_id: str) -> list[models.Incident]:
+    """Open incidents the sim engine raised (everything except manual reports)."""
+    return list(db.scalars(select(models.Incident).where(
+        models.Incident.machine_id == machine_id,
+        models.Incident.status == "open",
+        models.Incident.event_type != "manual_report",
+    )))
+
+
 def create_manual(db: Session, body: IncidentCreate) -> models.Incident:
     return create(
         db,

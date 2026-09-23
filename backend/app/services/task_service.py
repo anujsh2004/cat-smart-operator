@@ -37,6 +37,22 @@ def current_task(db: Session, *, operator_id: str | None = None, machine_id: str
     return tasks[0] if tasks else None
 
 
+def in_progress_task(db: Session, machine_id: str) -> models.Task | None:
+    start, end = _today_bounds()
+    return db.scalars(select(models.Task).where(
+        models.Task.machine_id == machine_id,
+        models.Task.status == "in_progress",
+        models.Task.scheduled_start.between(start, end),
+    ).order_by(models.Task.scheduled_start)).first()
+
+
+def set_progress(db: Session, task_id: str, progress_pct: int) -> None:
+    task = db.get(models.Task, task_id)
+    if task is not None and task.status == "in_progress" and task.progress_pct != progress_pct:
+        task.progress_pct = progress_pct
+        db.commit()
+
+
 def start_task(db: Session, task: models.Task) -> models.Task:
     # Only one task per machine runs at a time: pause any other in-progress one
     others = db.scalars(select(models.Task).where(

@@ -73,6 +73,8 @@ def test_unknown_id_404(client: TestClient):
     assert "detail" in res.json()
 
 
-def test_sim_not_ready(client: TestClient):
-    res = client.post("/api/sim/scenario", json={"machine_id": "EXC001", "scenario": "normal"})
-    assert res.status_code == 501
+def test_sim_reset(client: TestClient):
+    res = client.post("/api/sim/reset", json={"machine_id": "EXC001"})
+    assert res.status_code == 200, res.text
+    live = LiveState.model_validate(res.json())
+    assert live.active_scenario == "normal" and live.task_metrics

@@ -1,3 +1,4 @@
+import asyncio
 import logging
 from contextlib import asynccontextmanager
 
@@ -18,6 +19,7 @@ from app.routers import (
     training,
 )
 from app.services.ml import interface as ml
+from app.sim import engine as sim_engine
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -27,7 +29,12 @@ logger = logging.getLogger(__name__)
 async def lifespan(app: FastAPI):
     ml.load_models()
     logger.info("ML mode: %s", ml.ml_mode())
+    await asyncio.to_thread(sim_engine.init_all)
+    stop = asyncio.Event()
+    sim_task = asyncio.create_task(sim_engine.run(stop))
     yield
+    stop.set()
+    await sim_task
 
 
 app = FastAPI(title="Smart Operator Assistant API", version="0.1.0", lifespan=lifespan)

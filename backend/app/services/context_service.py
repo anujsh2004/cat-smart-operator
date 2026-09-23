@@ -15,6 +15,18 @@ def weather_temperature(db: Session, weather: str) -> float:
     return round(float(avg), 1) if avg is not None else 25.0
 
 
+def with_conditions(db: Session, context: Context, weather: str, ground: str) -> Context:
+    """Replace the task's planned conditions with the live (simulated) ones, e.g. the rain scenario."""
+    return context.model_copy(update={
+        "weather": WeatherInfo(
+            condition=weather,
+            temperature_c=weather_temperature(db, weather),
+            visibility=VISIBILITY.get(weather, "Good"),
+        ),
+        "ground_condition": ground,
+    })
+
+
 def get_context(db: Session, operator_id: str) -> Context | None:
     operator = db.get(models.Operator, operator_id)
     if operator is None:

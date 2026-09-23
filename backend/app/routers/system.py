@@ -9,6 +9,7 @@ from app.db.session import engine, get_db
 from app.schemas import Context, HealthResponse
 from app.services import context_service
 from app.services.ml import interface as ml
+from app.sim import engine as sim_engine
 
 logger = logging.getLogger(__name__)
 router = APIRouter(tags=["system"])
@@ -35,4 +36,7 @@ def get_context(operator_id: str = settings.DEFAULT_OPERATOR_ID, db: Session = D
     context = context_service.get_context(db, operator_id)
     if context is None:
         raise HTTPException(status_code=404, detail=f"Operator {operator_id} not found")
+    live_conditions = sim_engine.get_conditions(context.machine.machine_id)
+    if live_conditions is not None:
+        context = context_service.with_conditions(db, context, *live_conditions)
     return context
