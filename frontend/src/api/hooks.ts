@@ -12,6 +12,7 @@ import type {
 const LIVE_MS = 2000;
 const FEED_MS = 5000;
 const HEALTH_MS = 10000; // connection dot in the TopBar
+const TELEMETRY_MS = 10000; // backend persists telemetry every 5 ticks (~10 s)
 
 export const keys = {
   health: ["health"] as const,
@@ -62,6 +63,7 @@ export const useTelemetry = (machineId: string | undefined, minutes = 60) =>
     queryKey: keys.telemetry(machineId ?? "", minutes),
     queryFn: () => api.telemetry(machineId!, minutes),
     enabled: !!machineId,
+    refetchInterval: TELEMETRY_MS,
   });
 
 export const useSafety = (machineId: string | undefined) =>
