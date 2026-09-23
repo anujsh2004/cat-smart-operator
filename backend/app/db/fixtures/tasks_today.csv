@@ -1,0 +1,6 @@
+task_id,operator_id,machine_id,task_type,site_zone,scheduled_start,weather,ground_condition,estimated_time_min
+T001,OP1001,EXC001,Earth Excavation,Pit B,2026-01-01T08:00:00,Sunny,Firm,60
+T002,OP1001,EXC001,Trenching,Utility Corridor 2,2026-01-01T09:10:00,Rainy,Wet,45
+T003,OP1001,EXC001,Material Loading,Stockpile A,2026-01-01T10:05:00,Cloudy,Loose,30
+T004,OP1001,EXC001,Grading,Access Road North,2026-01-01T10:45:00,Sunny,Firm,35
+T005,OP1001,EXC001,Demolition,Block C,2026-01-01T13:00:00,Windy,Rocky,90
